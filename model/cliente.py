@@ -10,6 +10,9 @@ class Cliente:
     
     @nombre.setter
     def nombre(self, nombre):
+        if nombre == "":
+            raise ValueError("El nombre no puede estar vacío.")
+        
         if not nombre.isalpha():
             raise ValueError("El nombre debe contener solo letras.")
         self.__nombre = nombre
@@ -20,6 +23,8 @@ class Cliente:
     
     @cedula.setter
     def cedula(self, cedula):
+        if not cedula:
+            raise ValueError("La cédula no puede estar vacía.")
         if not cedula.isdigit():
             raise ValueError("La cédula debe contener solo números.")
         self.__cedula = cedula

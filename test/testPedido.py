@@ -2,6 +2,7 @@ from model.productoControl import ProductoControl
 from model.pedido import Pedido
 import unittest
 
+
 class TestPedido(unittest.TestCase):
     def test_agregar_producto(self):
         pedido = Pedido()
@@ -18,6 +19,6 @@ class TestPedido(unittest.TestCase):
         pedido.agregar_producto(producto2)
         total = pedido.calcular_total()
         self.assertEqual(total, 80.0)
-        
+    
 if __name__ == "__main__":
     unittest.main()
